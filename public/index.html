@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Company</title>
+</head>
+<body>
+    <h1>R++ Phone Company</h1>
+    <form id="newCustomer">
+        <h3>New Customer Sign Up:</h3>
+        <input type="text" id="ssn" placeholder="SSN (xxx-xx-xxxx)"><br>
+        <input type="text" id="fname" placeholder="First Name"><br>
+        <input type="text" id="minitial" placeholder="Middle Initial"><br>
+        <input type="text" id="lname" placeholder="Last Name"><br>
+        <input type="email" id="email" placeholder="Email"><br>
+        <input type="text" id="address" placeholder="Address"><br>
+        <p style=" margin-bottom: 0; margin-top: 2px;">Birthdate:</p>
+        <input type="date" id="birthdate">
+        <div style="padding-top: 15px;">
+            <button type="submit">Add Customer</button>
+        </div>
+    </form>
+    
+    <form id="newBankAccount">
+        <h3>Add Bank Account:</h3>
+        <input type="text" id="customer_ssn" placeholder="Customer SSN"><br>
+        <input type="number" id="balance" placeholder="Initial Balance" step="0.01"><br>
+        <input type="text" id="acct_num" placeholder="Account Number"><br>
+        <input type="text" id="bank_name" placeholder="Bank Name"><br>
+        <select id="acct_type">
+            <option value="">Select Account Type</option>
+            <option value="Checking">Checking</option>
+            <option value="Savings">Savings</option>
+        </select><br>
+        <select id="status">
+            <option value="">Select Status</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select><br>
+        <div style="padding-top: 15px;">
+            <button type="submit">Add Bank Account</button>
+        </div>
+    </form>
+    
+    <form id="newCard">
+        <h3>Add Payment Card:</h3>
+        <input type="text" id="card_customer_ssn" placeholder="Customer SSN"><br>
+        <input type="text" id="bank_acct_num" placeholder="Bank Account Number"><br>
+        <input type="text" id="card_num" placeholder="Card Number"><br>
+        <select id="card_status">
+            <option value="">Select Status</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+            <option value="Blocked">Blocked</option>
+        </select><br>
+        <select id="card_type">
+            <option value="">Select Card Type</option>
+            <option value="Credit">Credit</option>
+            <option value="Debit">Debit</option>
+        </select><br>
+        <p style=" margin-bottom: 0; margin-top: 2px;">Expiry Date:</p>
+        <input type="date" id="expiry"><br>
+        <div style="padding-top: 15px;">
+            <button type="submit">Add Card</button>
+        </div>
+    </form>
+
+    <form id="newPhonePlan">
+        <h3>Create Phone Plan:</h3>
+        <input type="text" id="plan_customer_ssn" placeholder="Customer SSN"><br>
+        <input type="text" id="phone_num" placeholder="Phone Number"><br>
+        <select id="plan_status">
+            <option value="">Select Status</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+            <option value="Pending">Pending</option>
+        </select><br>
+        <p style=" margin-bottom: 0; margin-top: 2px;">Start Date:</p>
+        <input type="date" id="start_date"><br>
+        <p style=" margin-bottom: 0; margin-top: 2px;">End Date:</p>
+        <input type="date" id="end_date"><br>
+        <select id="plan_type">
+            <option value="">Select Plan Type</option>
+            <option value="Basic">Basic</option>
+            <option value="Premium">Premium</option>
+        </select><br>
+        <select id="renewal_type">
+            <option value="">Select Renewal Type</option>
+            <option value="Auto">Auto Renewal</option>
+            <option value="Manual">Manual Renewal</option>
+        </select><br>
+        <div style="padding-top: 15px;">
+            <button type="submit">Create Phone Plan</button>
+        </div>
+    </form>
+
+    <h2>Transaction:</h2>
+
+    <form id="billPayment">
+        <h3>Pay Bill:</h3>
+        <input type="text" id="card_id" placeholder="Card ID"><br>
+        <input type="text" id="phone_plan_id" placeholder="Phone Plan ID"><br>
+        <input type="number" id="payment_amount" placeholder="Amount" step="0.01"><br>
+        <div style="padding-top: 15px;">
+            <button type="submit">Pay Bill</button>
+        </div>
+    </form>
+
+    <h2>Queries</h2>
+
+    <div >
+        <h3>Average Payment:</h3>
+        <form id="avgPayment">
+            <input type="text" id="payment_ssn" placeholder="SSN">
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="avgPaymentResult"></div>
+    </div>
+
+    <div >
+        <h3>Call History:</h3>
+        <form id="callHistory">
+            <input type="text" id="call_phone_number" placeholder="Enter Phone Number">
+            <div>
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="call_start_date">
+            </div>
+            <div>
+                <label for="end_date">End Date:</label>
+                <input type="date" id="call_end_date">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="callHistoryResult"></div> 
+    </div>
+
+    <div >
+        <h3>Longest Duration Calls:</h3>
+        <form id="longCalls">
+            <input type="text" id="long_calls_phone" placeholder="Phone #">
+            <input type="number" id="num_calls" placeholder="# of calls" value="5">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="longCallsResult"></div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
